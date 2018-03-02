@@ -4,8 +4,8 @@ class CreateHabits < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
       t.integer :number_of_days
-      t.belongs_to :user_id
-      t.belongs_to :category_id
+      t.belongs_to :user
+      t.belongs_to :category
       t.timestamps
     end
   end
