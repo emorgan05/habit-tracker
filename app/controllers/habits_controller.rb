@@ -1,5 +1,6 @@
 class HabitsController < ApplicationController
   def index
-    render json: Habit.all
+    @habits = Habit.all
+    render json: @habits
   end
 end
