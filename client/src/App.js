@@ -4,6 +4,12 @@ import HabitsList from './components/HabitsList';
 import { Container, Row, Col } from 'reactstrap';
 
 class App extends Component {
+  componentDidMount() {
+    if (this.props.habits.length === 0) {
+      this.props.getHabits();
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +17,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col xs="6">
-              <HabitsList />
+              <HabitsList habits={this.props.habits}/>
             </Col>
             <Col xs="6">
               <h1>Hello World</h1>
