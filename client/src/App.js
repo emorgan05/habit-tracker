@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import { Container, Row, Col } from 'reactstrap';
+import { fetchHabits } from './actions/actionTypes';
 
 class App extends Component {
   componentDidMount() {
-    if (this.props.habits.length === 0) {
-      this.props.getHabits();
-    }
+    // if (this.props.habits.length === 0) {
+    //   this.props.fetchHabits();
+    // }
+    // this.props.fetchHabits();
   }
 
   render() {
