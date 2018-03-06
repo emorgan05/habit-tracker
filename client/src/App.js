@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './actions/actionTypes';
 import { bindActionCreators } from 'redux';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
@@ -14,7 +13,7 @@ class App extends Component {
     // }
     this.props.fetchHabits();
   }
-  
+
   render() {
     return (
       <div className="App">

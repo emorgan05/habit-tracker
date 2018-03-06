@@ -1,6 +1,6 @@
 class HabitsController < ApplicationController
   def index
-    @habits = current_user.habits
+    @habits = Habit.all
     render json: @habits
   end
 end

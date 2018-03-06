@@ -5,9 +5,9 @@ export function fetchHabits() {
     dispatch({type: 'LOADING_HABITS'});
     return fetch('http://localhost:3001/habits')
       .then(response => {
-        return response.json()
+        return response.json();
       }).then(habits => {
-        return dispatch({ type: 'FETCH_HABITS', habits })
+        return dispatch({ type: 'FETCH_HABITS', habits });
       });
   };
 }
