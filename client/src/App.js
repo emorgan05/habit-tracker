@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import { Container, Row, Col } from 'reactstrap';
 import { fetchHabits } from './actions/actionTypes';
 
 class App extends Component {
-  componentDidMount() {
-    // if (this.props.habits.length === 0) {
-    //   this.props.fetchHabits();
-    // }
-    // this.props.fetchHabits();
-  }
-
   render() {
     return (
       <div className="App">
@@ -31,4 +25,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {habits: state.habits}
+}
+
+export default connect(mapStateToProps)(App);
