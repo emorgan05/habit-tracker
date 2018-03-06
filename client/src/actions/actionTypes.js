@@ -7,7 +7,7 @@ export function fetchHabits() {
       .then(response => {
         return response.json();
       }).then(habits => {
-        return dispatch({ type: 'FETCH_HABITS', habits });
+        return dispatch({ type: 'FETCH_HABITS', payload: habits });
       });
   };
 }
