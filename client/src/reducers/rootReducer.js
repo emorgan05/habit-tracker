@@ -3,7 +3,7 @@ import { habitsReducer } from './habitsReducer';
 // import all the other reducers
 
 const rootReducer = combineReducers({
-  habitsReducer
+  habits: habitsReducer
   // name reducers
 });
 

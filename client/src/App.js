@@ -8,10 +8,10 @@ import { fetchHabits } from './actions/actionTypes';
 
 class App extends Component {
   componentDidMount() {
-    // if (this.props.habits.length === 0) {
-    //   this.props.fetchHabits();
-    // }
-    this.props.fetchHabits();
+    if (this.props.habits.length === 0) {
+      this.props.fetchHabits();
+    }
+    // this.props.fetchHabits();
   }
 
   render() {
@@ -34,7 +34,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {habits: state.habits}
+  return {habits: state.habits.habits}
 }
 
 const mapDispatchToProps = (dispatch) => {

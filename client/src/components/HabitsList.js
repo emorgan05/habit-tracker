@@ -7,9 +7,10 @@ class HabitsList extends React.Component {
   }
 
   render () {
-    debugger
+    const habits = this.props.habits.map(habit => <p>{habit.name}</p>);
+
     return (
-      <p>{this.props.habits}</p>
+      {habits}
     )
   }
 }
