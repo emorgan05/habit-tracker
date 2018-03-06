@@ -21,7 +21,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col xs="6">
-              <HabitsList habits={this.props.habits}/>
+              <HabitsList />
             </Col>
             <Col xs="6">
               <h1>Hello World</h1>
