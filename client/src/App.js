@@ -72,6 +72,12 @@ class App extends Component {
     }
   }
 
+  addHabit = (habit) => {
+    this.setState({
+      habits: [...this.state.habits, habit]
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -90,8 +96,10 @@ class App extends Component {
           </Row>
           <Row>
             <Col xs="6">
-              <FaPlusSquareO onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}/>
-              {this.state.add === true ? <AddHabit /> : <div></div>}
+              <FaPlusSquareO
+                onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}
+              />
+              {this.state.add === true ? <AddHabit onFormSubmit={this.addHabit(habit)}/> : <div></div>}
             </Col>
           </Row>
         </Container>
