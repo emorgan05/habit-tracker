@@ -29,3 +29,8 @@ body {
 .habit-details {
   background-color: #D7DCF2;
 }
+
+#root > div > div > div:nth-child(2) > div > svg {
+  height: 3em;
+  width: 3em;
+}

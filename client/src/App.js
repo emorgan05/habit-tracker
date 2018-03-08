@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
+
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import AddHabit from './components/AddHabit';
@@ -11,6 +13,7 @@ class App extends Component {
 
     this.state = {
       user: 'a@email.com',
+      add: false,
       selectedHabit: {
           name: "Run",
           description: "Run 4 miles",
@@ -110,7 +113,8 @@ class App extends Component {
           </Row>
           <Row>
             <Col xs="6">
-              <AddHabit />
+              <FaPlusSquareO onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}/>
+              {this.state.add === true ? <AddHabit /> : <div></div>}
             </Col>
           </Row>
         </Container>
