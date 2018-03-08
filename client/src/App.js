@@ -8,8 +8,35 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: '',
-      habits: [],
+      user: 'a@email.com',
+      habits: [
+        { name: "Run",
+          description: "Run 4 miles",
+          number_of_days: 3,
+          category: {
+            id: 3,
+            title: 'fitness',
+          },
+          stars: [
+            { id: 1,
+              date: new Date(2018,3,5),
+              completed: true,
+            },
+            { id: 2,
+              date: new Date(2018,3,6),
+              completed: false,
+            },
+            { id: 3,
+              date: new Date(2018,3,7),
+              completed: true,
+            },
+            { id: 4,
+              date: new Date(2018,3,8),
+              completed: true,
+            },
+          ]
+        }
+      ],
     }
   }
 

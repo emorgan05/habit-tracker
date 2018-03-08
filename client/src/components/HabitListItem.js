@@ -2,7 +2,9 @@ import React from 'react';
 
 const HabitListItem = ({habit}) => {
   return (
-    <li>{habit.name} -- {habit.stars}</li>
+    <li>
+      {habit.name}
+    </li>
   )
 }
 
