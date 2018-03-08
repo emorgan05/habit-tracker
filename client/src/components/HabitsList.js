@@ -9,9 +9,11 @@ const HabitsList = ({habits}) => {
   const habitListItems = habits.map((habit, index) => <HabitListItem key={index} habit={habit} />);
 
   return (
-    <ul>
-      {habitListItems}
-    </ul>
+    <div className="habits-list">
+      <ul>
+        {habitListItems}
+      </ul>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
 
-const HabitDetails = () => {
+const HabitDetails = ({selectedHabit}) => {
   return (
-    <h1>Hello World</h1>
+    <div className="habit-details">
+      <p>{selectedHabit.name}</p>
+      <p>{selectedHabit.description}</p>
+    </div>
   )
 }
 

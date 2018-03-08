@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddHabit = () => {
   return (
-    <div className="addHabit">
+    <div className="add-habit">
       <h3>Add a Habit</h3>
       <form>
         <label>Name: </label>

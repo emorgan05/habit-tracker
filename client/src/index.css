@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+nav {
+  background-color: #D7DCF2;
+  margin-bottom: 20px;
+}
+
+.habit-details, .add-habit {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.habits-list ul {
+  padding-left: 0px;
+}
+
+.habits-list li {
+  border: 2px solid #A8ADC1;
+  margin: 5px;
+  padding: 10px;
+  list-style-type: none;
+}
