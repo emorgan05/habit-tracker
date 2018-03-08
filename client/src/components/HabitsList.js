@@ -1,15 +1,18 @@
 import React from 'react';
-import App from '../App';
+import HabitListItem from './HabitListItem';
 
-class HabitsList extends React.Component {
-
-  render () {
-    const habits = this.props.habits.map(habit => <p>{habit.name}</p>);
-
-    return (
-      {habits}
-    )
+const HabitsList = ({habits}) => {
+  if(!habits) {
+    return (<h3>Loading...</h3>);
   }
+
+  const habitListItems = habits.map(habit => <HabitListItem habit={habit} />);
+
+  return (
+    <ul>
+      {habitListItems}
+    </ul>
+  )
 }
 
 export default HabitsList;

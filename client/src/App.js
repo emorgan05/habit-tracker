@@ -24,14 +24,7 @@ class App extends Component {
                 <HabitsList habits={this.state.habits} />
               </Col>
             </Row>
-            <Row>
-              <Col xs="6">
-                <AddHabit />
-              </Col>
-            </Row>
-            <Col xs="6">
-              <HabitDetails />
-            </Col>
+
           </Row>
         </Container>
       </div>
