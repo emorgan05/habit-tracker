@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
+import AddHabit from './components/AddHabit';
 
 class App extends Component {
   constructor(props) {
@@ -77,7 +78,11 @@ class App extends Component {
                 <HabitsList habits={this.state.habits} />
               </Col>
             </Row>
-
+            <Row>
+              <Col xs="6">
+                <AddHabit />
+              </Col>
+            </Row>
           </Row>
         </Container>
       </div>
