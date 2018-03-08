@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import { Container, Row, Col } from 'reactstrap';
-import { fetchHabits } from './actions/actionTypes';
 
 class App extends Component {
-  componentDidMount() {
-    if (this.props.habits.length === 0) {
-      this.props.fetchHabits();
-    }
-    // this.props.fetchHabits();
-  }
+
 
   render() {
     return (
@@ -20,11 +12,18 @@ class App extends Component {
         <Navigation />
         <Container>
           <Row>
+            <Row>
+              <Col xs="6">
+                <HabitsList />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="6">
+                <AddHabit />
+              </Col>
+            </Row>
             <Col xs="6">
-              <HabitsList />
-            </Col>
-            <Col xs="6">
-              <h1>Hello World</h1>
+              <HabitDetails />
             </Col>
           </Row>
         </Container>
@@ -33,14 +32,5 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {habits: state.habits.habits}
-}
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchHabits: fetchHabits
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
