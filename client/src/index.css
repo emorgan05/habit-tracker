@@ -25,3 +25,7 @@ body {
   padding: 10px;
   list-style-type: none;
 }
+
+.habit-details {
+  background-color: #D7DCF2;
+}
