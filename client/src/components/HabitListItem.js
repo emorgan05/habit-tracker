@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HabitListItem = ({habit}) => {
+const HabitListItem = ({habit, onHabitSelect}) => {
   return (
-    <li>
+    <li onClick={() => onHabitSelect(habit)}>
       {habit.name}
     </li>
   )
