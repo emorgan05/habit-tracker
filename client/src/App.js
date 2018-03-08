@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
-import { Container, Row, Col } from 'reactstrap';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      user: '',
+      habits: [],
+    }
+  }
 
   render() {
     return (
       <div className="App">
-        <Navigation />
+        <Navigation user={this.state.user} />
         <Container>
           <Row>
             <Row>
               <Col xs="6">
-                <HabitsList />
+                <HabitsList habits={this.state.habits} />
               </Col>
             </Row>
             <Row>
@@ -31,6 +38,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
