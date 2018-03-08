@@ -4,6 +4,9 @@ body {
   font-family: sans-serif;
 }
 
+p {
+  font-size: 1.2em;
+}
 .navbar {
   background-color: #D7DCF2;
   margin-bottom: 20px;
@@ -24,6 +27,7 @@ body {
   margin: 5px;
   padding: 10px;
   list-style-type: none;
+  font-size: 1.2em;
 }
 
 .habit-details {
