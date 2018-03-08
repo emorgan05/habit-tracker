@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import AddHabit from './components/AddHabit';
+import HabitDetails from './components/HabitDetails';
 
 class App extends Component {
   constructor(props) {
@@ -73,16 +74,17 @@ class App extends Component {
         <Navigation user={this.state.user} />
         <Container>
           <Row>
-            <Row>
-              <Col xs="6">
-                <HabitsList habits={this.state.habits} />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs="6">
-                <AddHabit />
-              </Col>
-            </Row>
+            <Col xs="6">
+              <HabitsList habits={this.state.habits} />
+            </Col>
+            <Col xs="6">
+              <HabitDetails />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="6">
+              <AddHabit />
+            </Col>
           </Row>
         </Container>
       </div>
