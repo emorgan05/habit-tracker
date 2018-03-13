@@ -12,22 +12,30 @@ class AddHabit extends Component {
     }
   }
 
-  handleChange = (event) => {
-    console.log(event.target);
+  handleNameChange = (event) => {
+    this.setState({
+      name: event.target.value,
+    })
+  }
+
+  handleDescriptionChange = (event) => {
+    this.setState({
+      description: event.target.value,
+    })
   }
 
   render() {
     return (
       <div className="add-habit">
         <h5>Add a Habit</h5>
-        <Form onSubmit={this.props.addHabit(this.state)}>
+        <Form >
           <FormGroup>
             <Label>Name: </Label>
-            <Input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+            <Input type="text" name="name" onChange={this.handleNameChange} value={this.state.name} />
           </FormGroup>
           <FormGroup>
             <Label>Description: </Label>
-            <Input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
+            <Input type="text" name="description" onChange={this.handleDescriptionChange} value={this.state.description} />
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
@@ -49,6 +57,7 @@ class AddHabit extends Component {
           </FormGroup>
           <Button>Submit</Button>
         </Form>
+        {this.state.description}
       </div>
     );
   }
