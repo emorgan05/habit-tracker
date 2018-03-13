@@ -7,7 +7,7 @@ const StarListItem = ({star}) => {
   let starDate = star.date.getDate();
   let now = new Date();
   now.setHours(0, 0, 0, 0);
-  
+
   if (starDate < now) {
     if (star.completed) {
       return (<li><FaCheckCircleO /></li>)
