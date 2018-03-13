@@ -72,7 +72,7 @@ class App extends Component {
     }
   }
 
-  addHabit = (habit) => {
+  addNewHabit(habit) {
     this.setState({
       habits: [...this.state.habits, habit]
     })
@@ -99,7 +99,7 @@ class App extends Component {
               <FaPlusSquareO
                 onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}
               />
-              {this.state.add === true ? <AddHabit /> : <div></div>}
+              {this.state.add === true ? <AddHabit onFormSubmit={habit => this.addNewHabit(habit)} /> : <div></div>}
             </Col>
           </Row>
         </Container>

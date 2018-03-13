@@ -36,11 +36,16 @@ class AddHabit extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.onFormSubmit(this.state)
+  }
+
   render() {
     return (
       <div className="add-habit">
         <h5>Add a Habit</h5>
-        <Form >
+        <Form onSubmit={this.handleSubmit} >
           <FormGroup>
             <Label>Name: </Label>
             <Input type="text" name="name" onChange={this.handleNameChange} value={this.state.name} />
