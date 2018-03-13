@@ -10,3 +10,28 @@
 
 // stars list
 // star list item
+
+import React from 'react';
+import StarListItem from './StarListItem';
+
+const StarsList = ({habit}) => {
+  const starListItems = habit.stars.map((star, index) => {
+      return (
+        <StarListItem
+          key={index}
+          star={star}
+        />
+      )
+    }
+  );
+
+  return (
+    <div className="stars-list">
+      <ul>
+        {starListItems}
+      </ul>
+    </div>
+  )
+}
+
+export default StarsList;
