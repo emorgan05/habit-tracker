@@ -19,7 +19,7 @@ class StarsList extends Component {
     super(props);
 
     this.state = {
-      monday: null,
+      monday: '',
       stars: this.props.habit.stars,
     };
   }
@@ -29,8 +29,9 @@ class StarsList extends Component {
     const clone = new Date(date);
     const day = date.getDay();
     const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+    clone.setDate(diff);
     this.setState({
-      monday: clone.setDate(diff),
+      monday: clone,
       stars: [
         ...this.state.stars,
         { id: 5,
@@ -46,7 +47,8 @@ class StarsList extends Component {
   }
 
   render() {
-    const starListItems = this.props.habit.stars.map((star, index) => {
+    console.log(this.state.stars);
+    const starListItems = this.state.stars.map((star, index) => {
         return (
           <StarListItem
             key={index}
