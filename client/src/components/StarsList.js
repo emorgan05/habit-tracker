@@ -24,33 +24,51 @@ class StarsList extends Component {
     };
   }
 
-  startOfWeek = () => {
+  startOfWeek() {
     const date = this.state.stars[this.state.stars.length - 1].date;
     const clone = new Date(date);
     const day = date.getDay();
     const diff = date.getDate() - day + (day === 0 ? -6 : 1);
     clone.setDate(diff);
     this.setState({
-      monday: clone,
-      stars: [
-        ...this.state.stars,
-        { id: 5,
-          date: new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1),
-          completed: null,
-        }
-      ]
+      monday: clone
     });
+  }
+
+  addDates() {
+    let date = this.state.stars[this.state.stars.length - 1].date;
+    let day = date.getDay();
+    let id = 24;
+
+    while (day < 7) {
+      let newStar = {
+        id: id,
+        date: new Date(this.state.stars[this.state.stars.length - 1].date.getFullYear(), this.state.stars[this.state.stars.length - 1].date.getMonth(), this.state.stars[this.state.stars.length - 1].date.getDate() + 1),
+        completed: null,
+      }
+
+      this.setState({
+        stars: [
+          ...this.state.stars,
+          newStar
+        ]
+      });
+
+      id += 1;
+      day += 1;
+    }
   }
 
   componentDidMount() {
     this.startOfWeek();
+    this.addDates();
   }
 
   render() {
     if (!this.state.stars) {
       return <h3>Loading...</h3>
     };
-    
+
     const starListItems = this.state.stars.map((star, index) => {
         return (
           <StarListItem
