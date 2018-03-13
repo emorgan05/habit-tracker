@@ -24,40 +24,25 @@ class StarsList extends Component {
     };
   }
 
+  startOfWeek = () => {
+    const date = this.state.stars[this.state.stars.length - 1].date;
+    const clone = new Date(date);
+    const day = date.getDay();
+    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+    this.setState({
+      monday: clone.setDate(diff),
+      stars: [
+        ...this.state.stars,
+        { id: 5,
+          date: new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1),
+          completed: null,
+        }
+      ]
+    });
+  }
+
   componentDidMount() {
-    const startOfWeek = () => {
-      const date = this.state.stars[this.state.stars.length - 1].date;
-      const clone = new Date(date);
-      const day = date.getDay();
-      const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-      this.setState({
-        monday: clone.setDate(diff)
-      });
-    }
-
-    const addNewStars = () => {
-      let id = 5;
-      while(this.state.stars[this.state.stars.length - 1].date.getDate() <= 31) {
-        let starDate = this.state.stars[this.state.stars.length - 1].date;
-        let starDateToAdd = new Date(starDate.getFullYear(), starDate.getMonth(), starDate.getDate() + 1);
-        let star = {
-          id: id,
-          date: starDateToAdd,
-          completed: '',
-        };
-
-        this.setState({
-          stars: [
-            ...this.state.stars,
-            star
-          ]
-        })
-        id += 1;
-      }
-    }
-
-    startOfWeek();
-    addNewStars();
+    this.startOfWeek();
   }
 
   render() {
