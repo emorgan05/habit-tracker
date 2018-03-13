@@ -38,25 +38,41 @@ class StarsList extends Component {
   addDates() {
     let date = this.state.stars[this.state.stars.length - 1].date;
     let day = date.getDay();
+    console.log(this.state.stars);
     let id = 24;
+    let starArray = [];
+
+    if (day < 6) {
+      let firstStar = {
+        id: id,
+        date: new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1),
+        completed: null,
+      }
+
+      starArray.push(firstStar);
+      id += 1;
+      day += 1;
+    }
 
     while (day < 7) {
       let newStar = {
         id: id,
-        date: new Date(this.state.stars[this.state.stars.length - 1].date.getFullYear(), this.state.stars[this.state.stars.length - 1].date.getMonth(), this.state.stars[this.state.stars.length - 1].date.getDate() + 1),
+        date: new Date(starArray[starArray.length - 1].date.getFullYear(), starArray[starArray.length - 1].date.getMonth(), starArray[starArray.length - 1].date.getDate() + 1),
         completed: null,
       }
 
-      this.setState({
-        stars: [
-          ...this.state.stars,
-          newStar
-        ]
-      });
+      starArray.push(newStar);
 
       id += 1;
       day += 1;
     }
+
+    this.setState({
+      stars: [
+        ...this.state.stars,
+        starArray,
+      ]
+    });
   }
 
   componentDidMount() {
