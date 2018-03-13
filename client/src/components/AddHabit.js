@@ -8,7 +8,13 @@ class AddHabit extends Component {
       name: '',
       description: '',
       numberOfDays: '',
-      category: ''
+      category: '',
+      stars: [
+        { id: 156,
+          date: new Date(),
+          completed: null,
+        }
+      ]
     }
   }
 
@@ -43,7 +49,13 @@ class AddHabit extends Component {
       name: '',
       description: '',
       numberOfDays: '',
-      category: ''
+      category: '',
+      stars: [
+        { id: 156 + 1,
+          date: new Date(),
+          completed: null,
+        }
+      ]
     })
   }
 

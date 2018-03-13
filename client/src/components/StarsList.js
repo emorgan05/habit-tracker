@@ -47,7 +47,10 @@ class StarsList extends Component {
   }
 
   render() {
-    console.log(this.state.stars);
+    if (!this.state.stars) {
+      return <h3>Loading...</h3>
+    };
+    
     const starListItems = this.state.stars.map((star, index) => {
         return (
           <StarListItem
