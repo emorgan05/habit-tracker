@@ -38,7 +38,13 @@ class AddHabit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onFormSubmit(this.state)
+    this.props.onFormSubmit(this.state);
+    this.setState({
+      name: '',
+      description: '',
+      numberOfDays: '',
+      category: ''
+    })
   }
 
   render() {
