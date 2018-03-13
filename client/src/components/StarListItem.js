@@ -1,9 +1,11 @@
 import React from 'react';
 
 const StarListItem = ({star}) => {
+  console.log(star);
+
   return (
     <li>
-      {star.completed}
+      {star.date.toString()}
     </li>
   )
 }
