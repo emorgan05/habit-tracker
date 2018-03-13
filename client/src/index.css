@@ -38,3 +38,12 @@ p {
   height: 3em;
   width: 3em;
 }
+
+.stars-list ul {
+  padding-left: 0px;
+}
+
+.stars-list li {
+  display: inline;
+  border: none;
+}
