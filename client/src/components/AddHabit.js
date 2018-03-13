@@ -7,7 +7,7 @@ class AddHabit extends Component {
     this.state = {
       name: '',
       description: '',
-      number_of_days: '',
+      numberOfDays: '',
       category: ''
     }
   }
@@ -26,7 +26,7 @@ class AddHabit extends Component {
 
   handleDaysChange = (event) => {
     this.setState({
-      number_of_days: event.target.value,
+      numberOfDays: event.target.value,
     })
   }
 
@@ -51,7 +51,7 @@ class AddHabit extends Component {
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
-            <Input type="text" name="number_of_days" onChange={this.handleDaysChange} value={this.state.number_of_days} />
+            <Input type="text" name="numberOfDays" onChange={this.handleDaysChange} value={this.state.numberOfDays} />
           </FormGroup>
           <FormGroup>
             <Label>Category: </Label>
@@ -69,7 +69,6 @@ class AddHabit extends Component {
           </FormGroup>
           <Button>Submit</Button>
         </Form>
-        {this.state.category}
       </div>
     );
   }

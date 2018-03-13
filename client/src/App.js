@@ -18,7 +18,7 @@ class App extends Component {
       habits: [
         { name: "Run",
           description: "Run 4 miles",
-          number_of_days: 3,
+          numberOfDays: 3,
           category: {
             id: 3,
             title: 'Fitness',
@@ -44,7 +44,7 @@ class App extends Component {
         },
         { name: "Meditate",
           description: "Breathing meditation for 10 minutes",
-          number_of_days: 7,
+          numberOfDays: 7,
           category: {
             id: 7,
             title: 'Spiritual',
