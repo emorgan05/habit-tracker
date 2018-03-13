@@ -24,6 +24,18 @@ class AddHabit extends Component {
     })
   }
 
+  handleDaysChange = (event) => {
+    this.setState({
+      number_of_days: event.target.value,
+    })
+  }
+
+  handleCategoryChange = (event) => {
+    this.setState({
+      category: event.target.value,
+    })
+  }
+
   render() {
     return (
       <div className="add-habit">
@@ -39,11 +51,11 @@ class AddHabit extends Component {
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
-            <Input type="text" name="number_of_days" onChange={this.handleChange} value={this.state.number_of_days} />
+            <Input type="text" name="number_of_days" onChange={this.handleDaysChange} value={this.state.number_of_days} />
           </FormGroup>
           <FormGroup>
             <Label>Category: </Label>
-             <Input type="select" name="select" id="exampleSelect">
+             <Input type="select" name="select" id="exampleSelect" value={this.state.category} onChange={this.handleCategoryChange}>
               <option value="Emotional">Emotional</option>
               <option value="Intellectual">Intellectual</option>
               <option value="Fitness">Fitness</option>
@@ -57,7 +69,7 @@ class AddHabit extends Component {
           </FormGroup>
           <Button>Submit</Button>
         </Form>
-        {this.state.description}
+        {this.state.category}
       </div>
     );
   }
