@@ -38,7 +38,6 @@ class StarsList extends Component {
   addDates() {
     let date = this.state.stars[this.state.stars.length - 1].date;
     let day = date.getDay();
-    console.log(this.state.stars);
     let id = 24;
     let starArray = [];
 
