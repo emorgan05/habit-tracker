@@ -6,6 +6,8 @@ const HabitDetails = ({selectedHabit}) => {
       <div className="habit-details">
         <p>Name: {selectedHabit.name}</p>
         <p>Description: {selectedHabit.description}</p>
+        <p>Goal: I want to {selectedHabit.name} {selectedHabit.numberOfDays} each week</p>
+        <p>Category: {selectedHabit.category.title}</p>
       </div>
     )
   } else {
