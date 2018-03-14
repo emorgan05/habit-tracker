@@ -11,6 +11,13 @@
 // stars list
 // star list item
 
+// from today
+// find monday
+// check this.state.stars to see if there are 7 stars after monday
+// if there are, map over them and create the starListItems
+// if not, add stars
+// then map over them
+
 import React, { Component } from 'react';
 import StarListItem from './StarListItem';
 
@@ -19,13 +26,21 @@ class StarsList extends Component {
     super(props);
 
     this.state = {
+      today: '',
       monday: '',
       stars: this.props.habit.stars,
     };
   }
 
-  startOfWeek() {
-    const date = this.state.stars[this.state.stars.length - 1].date;
+  setToday() {
+    const date = new Date();
+    date.setHours(0,0,0);
+    this.setState({
+      today: date
+    });
+  }
+
+  startOfWeek(date) {
     const clone = new Date(date);
     const day = date.getDay();
     const diff = date.getDate() - day + (day === 0 ? -6 : 1);
@@ -33,6 +48,10 @@ class StarsList extends Component {
     this.setState({
       monday: clone
     });
+  }
+
+  checkStars(monday) {
+    this.state.stars.filter((star) => { star.date === monday });
   }
 
   addDates() {
@@ -75,7 +94,9 @@ class StarsList extends Component {
   }
 
   componentDidMount() {
-    this.startOfWeek();
+    this.setToday();
+    this.startOfWeek(this.state.today);
+    this.checkStars(this.state.monday);
     this.addDates();
   }
 
