@@ -28,6 +28,8 @@ class StarsList extends Component {
     this.state = {
       today: '',
       monday: '',
+      mondayStar: '',
+      week: [],
       stars: this.props.habit.stars,
     };
   }
@@ -50,32 +52,25 @@ class StarsList extends Component {
     });
   }
 
-  checkStars(monday) {
-    this.state.stars.filter((star) => { star.date === monday });
+  findMondayStar(monday) {
+    const mondayStar = this.state.stars.filter((star) => { star.date === monday })
+    const index = this.state.stars.indexOf(mondayStar);
+    if(mondayStar) {
+      this.setState({
+        mondayStar: mondayStar,
+        week: this.state.stars.slice(index, index + 6)
+      });
+    } else {
+      addStars(monday);
+    }
   }
 
-  addDates() {
-    let date = this.state.stars[this.state.stars.length - 1].date;
-    let day = date.getDay();
-    let id = 24;
-    let starArray = [];
-
-    if (day < 6) {
-      let firstStar = {
-        id: id,
-        date: new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1),
-        completed: null,
-      }
-
-      starArray.push(firstStar);
-      id += 1;
-      day += 1;
-    }
-
+  addStars(monday) {
+    let id = 43;
     while (day < 7) {
       let newStar = {
         id: id,
-        date: new Date(starArray[starArray.length - 1].date.getFullYear(), starArray[starArray.length - 1].date.getMonth(), starArray[starArray.length - 1].date.getDate() + 1),
+        date: new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + 1),
         completed: null,
       }
 
@@ -86,6 +81,7 @@ class StarsList extends Component {
     }
 
     this.setState({
+      week: starArray,
       stars: [
         ...this.state.stars,
         starArray,
@@ -96,16 +92,15 @@ class StarsList extends Component {
   componentDidMount() {
     this.setToday();
     this.startOfWeek(this.state.today);
-    this.checkStars(this.state.monday);
-    this.addDates();
+    this.findMondayStar(this.state.monday);
   }
 
   render() {
-    if (!this.state.stars) {
+    if (!this.state.week) {
       return <h3>Loading...</h3>
     };
 
-    const starListItems = this.state.stars.map((star, index) => {
+    const starListItems = this.state.week.map((star, index) => {
         return (
           <StarListItem
             key={index}
