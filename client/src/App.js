@@ -112,8 +112,16 @@ class App extends Component {
       return (
         <div className="App">
           <Navigation />
-          <LoginPage />
-          <SignupPage />
+          <Container>
+            <Row>
+              <Col xs="6">
+                <LoginPage />
+              </Col>
+              <Col xs="6">
+                <SignupPage />
+              </Col>
+            </Row>
+          </Container>
         </div>
       )
     }
