@@ -52,7 +52,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     actions: sessionActions },
     dispatch);
-  });
 }
 
 export default connect(null, mapDispatchToProps)(LoginPage);
