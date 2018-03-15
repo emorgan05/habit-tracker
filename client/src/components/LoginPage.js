@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as sessionActions from '../actions/sessionActions';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -44,4 +48,11 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    actions: sessionActions },
+    dispatch);
+  });
+}
+
+export default connect(null, mapDispatchToProps)(LoginPage);
