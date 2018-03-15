@@ -29,73 +29,15 @@ class StarsList extends Component {
       today: '',
       monday: '',
       mondayStar: '',
-      week: [],
-      stars: this.props.habit.stars,
+      stars: [{}, {}, {}, {}, {}, {}, {}],
     };
   }
 
-  // setToday() {
-  //   const date = new Date();
-  //   date.setHours(0,0,0);
-  //   this.setState({
-  //     today: date
-  //   });
-  // }
-  //
-  // startOfWeek(date) {
-  //   const clone = new Date(date);
-  //   const day = date.getDay();
-  //   const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-  //   clone.setDate(diff);
-  //   this.setState({
-  //     monday: clone
-  //   });
-  // }
-  //
-  // addStars(monday) {
-  //   let id = 43;
-  //   let day = monday.getDay();
-  //   let starArray = [];
-  //
-  //   while (day < 7) {
-  //     let newStar = {
-  //       id: id,
-  //       date: new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + 1),
-  //       completed: null,
-  //     }
-  //
-  //     starArray.push(newStar);
-  //     id += 1;
-  //     day += 1;
-  //   }
-  //
-  //   this.setState({
-  //     week: starArray,
-  //     stars: [
-  //       ...this.state.stars,
-  //       starArray,
-  //     ]
-  //   });
-  // }
-  //
-  // findMondayStar(monday) {
-  //   const mondayStar = this.state.stars.filter((star) => { star.date === monday })
-  //   const index = this.state.stars.indexOf(mondayStar);
-  //   if(mondayStar) {
-  //     this.setState({
-  //       mondayStar: mondayStar,
-  //       week: this.state.stars.slice(index, index + 6)
-  //     });
-  //   } else {
-  //     this.addStars(monday);
-  //   }
-  // }
-  //
-  // componentDidMount() {
-  //   this.setToday();
-  //   this.startOfWeek(this.state.today);
-  //   this.findMondayStar(this.state.monday);
-  // }
+  componentDidMount() {
+    this.setState({
+      stars: [].concat(this.props.habit.stars, this.state.stars.splice(0, this.props.habit.stars.length - 1))
+    });
+  }
 
   render() {
     if (!this.state.stars) {
