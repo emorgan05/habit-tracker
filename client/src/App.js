@@ -6,13 +6,15 @@ import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import AddHabit from './components/AddHabit';
 import HabitDetails from './components/HabitDetails';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      user: 'a@email.com',
+      user: '',
       add: false,
       selectedHabit: null,
       habits: [
@@ -79,32 +81,42 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <Navigation user={this.state.user} />
-        <Container>
-          <Row>
-            <Col xs="6">
-              <HabitsList
-                habits={this.state.habits}
-                onHabitSelect={habit => this.setState({ selectedHabit: habit })}
-              />
-            </Col>
-            <Col xs="6">
-              <HabitDetails selectedHabit={this.state.selectedHabit}/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs="6">
-              <FaPlusSquareO
-                onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}
-              />
-              {this.state.add === true ? <AddHabit onFormSubmit={habit => this.addNewHabit(habit)} /> : <div></div>}
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
+    if (this.state.user) {
+      return (
+        <div className="App">
+          <Navigation user={this.state.user} />
+          <Container>
+            <Row>
+              <Col xs="6">
+                <HabitsList
+                  habits={this.state.habits}
+                  onHabitSelect={habit => this.setState({ selectedHabit: habit })}
+                />
+              </Col>
+              <Col xs="6">
+                <HabitDetails selectedHabit={this.state.selectedHabit}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="6">
+                <FaPlusSquareO
+                  onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}
+                />
+                {this.state.add === true ? <AddHabit onFormSubmit={habit => this.addNewHabit(habit)} /> : <div></div>}
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          <Navigation />
+          <LoginPage />
+          <SignupPage />
+        </div>
+      )
+    }
   }
 }
 
