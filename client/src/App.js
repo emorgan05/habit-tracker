@@ -5,7 +5,7 @@ import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 
 import Navigation from './components/Navigation';
 import HabitsList from './containers/HabitsList';
-import AddHabit from './components/AddHabit';
+import AddHabit from './containers/AddHabit';
 import HabitDetails from './components/HabitDetails';
 import LoginPage from './containers/LoginPage';
 import SignupPage from './components/SignupPage';
@@ -18,12 +18,6 @@ class App extends Component {
       add: false,
       selectedHabit: null,
     }
-  }
-
-  addNewHabit(habit) {
-    this.setState({
-      habits: [...this.props.habits, habit]
-    })
   }
 
   render() {
@@ -47,7 +41,7 @@ class App extends Component {
                 <FaPlusSquareO
                   onClick={(event) => { this.state.add === true ? this.setState({ add: false }) : this.setState({ add: true }) }}
                 />
-                {this.state.add === true ? <AddHabit onFormSubmit={habit => this.addNewHabit(habit)} /> : <div></div>}
+                {this.state.add === true ? <AddHabit /> : <div></div>}
               </Col>
             </Row>
           </Container>

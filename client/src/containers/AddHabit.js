@@ -49,7 +49,7 @@ class AddHabit extends Component {
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
-            <Input type="text" name="number_of_days" onChange={this.handleChange} value={this.state.numberOfDays} />
+            <Input type="text" name="number_of_days" onChange={this.handleChange} value={this.state.number_of_days} />
           </FormGroup>
           <FormGroup>
             <Label>Category: </Label>
