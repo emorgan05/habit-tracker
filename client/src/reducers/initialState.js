@@ -1,3 +1,5 @@
 export default {
-  session: !!sessionStorage.jwt
+  session: !!sessionStorage.jwt,
+  loading: false,
+  habits: [],
 }
