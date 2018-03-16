@@ -10,6 +10,8 @@ import HabitDetails from './components/HabitDetails';
 import LoginPage from './containers/LoginPage';
 import SignupPage from './components/SignupPage';
 
+import { fetchHabits } from './actions/habitActions';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -72,6 +74,12 @@ class App extends Component {
           ]
         }
       ],
+    }
+  }
+
+  componentDidMount() {
+    if(this.props.logged_in) {
+      fetchHabits()
     }
   }
 
