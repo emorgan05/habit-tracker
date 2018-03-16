@@ -14,6 +14,19 @@ class HabitsApi {
       .then(response => response.json())
       .catch(error => error)
   }
+
+  static createHabit() {
+    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const request = new Request('http://localhost:3001/habits', {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({habit: habit})
+    });
+
+    return fetch(request)
+      .then(response => response.json())
+      .catch(error => error);
+  }
 }
 
 export default HabitsApi;

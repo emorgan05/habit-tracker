@@ -9,3 +9,12 @@ export function fetchHabits() {
       });
   };
 }
+
+export function createNewHabit(habit) {
+  return (dispatch) => {
+    return HabitsApi.createHabit(habit)
+      .then(response => {
+        return dispatch({ type: 'CREATE_HABIT', payload: response });
+      });
+  };
+}
