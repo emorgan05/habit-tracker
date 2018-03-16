@@ -5,4 +5,6 @@ class HabitsController < ApplicationController
     @habits = current_user.habits
     render json: @habits
   end
+
+  
 end
