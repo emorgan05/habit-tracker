@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 
@@ -81,10 +82,10 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.user) {
+    if (this.props.logged_in) {
       return (
         <div className="App">
-          <Navigation user={this.state.user} />
+          <Navigation logged_in={this.props.logged_in} />
           <Container>
             <Row>
               <Col xs="6">
@@ -111,7 +112,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Navigation />
+          <Navigation logged_in={this.props.logged_in}/>
           <Container>
             <Row>
               <Col xs="6">
@@ -128,4 +129,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    logged_in: state.session
+  }
+}
+
+export default connect(mapStateToProps)(App);
