@@ -22,7 +22,7 @@ class App extends Component {
 
   addNewHabit(habit) {
     this.setState({
-      habits: [...this.state.habits, habit]
+      habits: [...this.props.habits, habit]
     })
   }
 
@@ -75,7 +75,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    logged_in: state.session
+    logged_in: state.session,
+    habits: state.habits.habits
   }
 }
 

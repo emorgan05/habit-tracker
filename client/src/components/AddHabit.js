@@ -9,37 +9,14 @@ class AddHabit extends Component {
       description: '',
       numberOfDays: '',
       category: '',
-      stars: [
-        { id: 156,
-          date: new Date(),
-          completed: null,
-        }
-      ]
+      stars: [{}, {}, {}, {}, {}, {}, {}]
     }
   }
 
-  handleNameChange = (event) => {
+  handleChange = (event) => {
     this.setState({
-      name: event.target.value,
-    })
-  }
-
-  handleDescriptionChange = (event) => {
-    this.setState({
-      description: event.target.value,
-    })
-  }
-
-  handleDaysChange = (event) => {
-    this.setState({
-      numberOfDays: event.target.value,
-    })
-  }
-
-  handleCategoryChange = (event) => {
-    this.setState({
-      category: event.target.value,
-    })
+      [event.target.name]: event.target.value
+    });
   }
 
   handleSubmit = (event) => {
@@ -50,12 +27,7 @@ class AddHabit extends Component {
       description: '',
       numberOfDays: '',
       category: '',
-      stars: [
-        { id: 156 + 1,
-          date: new Date(),
-          completed: null,
-        }
-      ]
+      stars: [{}, {}, {}, {}, {}, {}, {}]
     })
   }
 
@@ -66,19 +38,19 @@ class AddHabit extends Component {
         <Form onSubmit={this.handleSubmit} >
           <FormGroup>
             <Label>Name: </Label>
-            <Input type="text" name="name" onChange={this.handleNameChange} value={this.state.name} />
+            <Input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
           </FormGroup>
           <FormGroup>
             <Label>Description: </Label>
-            <Input type="text" name="description" onChange={this.handleDescriptionChange} value={this.state.description} />
+            <Input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
-            <Input type="text" name="numberOfDays" onChange={this.handleDaysChange} value={this.state.numberOfDays} />
+            <Input type="text" name="numberOfDays" onChange={this.handleChange} value={this.state.numberOfDays} />
           </FormGroup>
           <FormGroup>
             <Label>Category: </Label>
-             <Input type="select" name="select" id="exampleSelect" value={this.state.category} onChange={this.handleCategoryChange}>
+             <Input type="select" name="category" id="exampleSelect" value={this.state.category} onChange={this.handleChange}>
               <option value="Emotional">Emotional</option>
               <option value="Intellectual">Intellectual</option>
               <option value="Fitness">Fitness</option>
