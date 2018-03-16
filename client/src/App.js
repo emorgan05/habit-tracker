@@ -7,7 +7,7 @@ import Navigation from './components/Navigation';
 import HabitsList from './components/HabitsList';
 import AddHabit from './components/AddHabit';
 import HabitDetails from './components/HabitDetails';
-import LoginPage from './components/LoginPage';
+import LoginPage from './containers/LoginPage';
 import SignupPage from './components/SignupPage';
 
 class App extends Component {
