@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 
 import Navigation from './components/Navigation';
-import HabitsList from './components/HabitsList';
+import HabitsList from './containers/HabitsList';
 import AddHabit from './components/AddHabit';
 import HabitDetails from './components/HabitDetails';
 import LoginPage from './containers/LoginPage';

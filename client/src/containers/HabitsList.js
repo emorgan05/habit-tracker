@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HabitListItem from './HabitListItem';
+import HabitListItem from '../components/HabitListItem';
 
 class HabitsList extends Component {
   render() {
