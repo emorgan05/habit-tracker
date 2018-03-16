@@ -13,9 +13,7 @@ class StarListItem extends Component {
 
   render() {
     if (this.props.star.date) {
-      let date = this.props.star.date.to_f * 1000;
-      let jsDate = new Date(date);
-      let starDate = jsDate.getDate();
+      let starDate = new Date(this.props.star.date.to_f * 1000).getDate();
       let now = new Date();
       now.setHours(0, 0, 0, 0);
 
