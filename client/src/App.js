@@ -15,63 +15,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: '',
       add: false,
       selectedHabit: null,
-      habits: [
-        { name: "Run",
-          description: "Run 4 miles",
-          numberOfDays: 3,
-          category: {
-            id: 3,
-            title: 'Fitness',
-          },
-          stars: [
-            { id: 1,
-              date: new Date(2018,3,5),
-              completed: true,
-            },
-            { id: 2,
-              date: new Date(2018,3,6),
-              completed: false,
-            },
-            { id: 3,
-              date: new Date(2018,3,7),
-              completed: true,
-            },
-            { id: 4,
-              date: new Date(2018,3,8),
-              completed: true,
-            },
-          ]
-        },
-        { name: "Meditate",
-          description: "Breathing meditation for 10 minutes",
-          numberOfDays: 7,
-          category: {
-            id: 7,
-            title: 'Spiritual',
-          },
-          stars: [
-            { id: 1,
-              date: new Date(2018,3,5),
-              completed: true,
-            },
-            { id: 2,
-              date: new Date(2018,3,6),
-              completed: false,
-            },
-            { id: 3,
-              date: new Date(2018,3,7),
-              completed: true,
-            },
-            { id: 4,
-              date: new Date(2018,3,8),
-              completed: true,
-            },
-          ]
-        }
-      ],
     }
   }
 
@@ -90,7 +35,6 @@ class App extends Component {
             <Row>
               <Col xs="6">
                 <HabitsList
-                  habits={this.state.habits}
                   onHabitSelect={habit => this.setState({ selectedHabit: habit })}
                 />
               </Col>
