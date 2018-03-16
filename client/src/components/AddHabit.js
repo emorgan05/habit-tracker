@@ -10,8 +10,8 @@ class AddHabit extends Component {
     this.state = {
       name: '',
       description: '',
-      numberOfDays: '',
-      category: '',
+      number_of_days: '',
+      category_id: '',
       stars: [{}, {}, {}, {}, {}, {}, {}]
     }
   }
@@ -28,8 +28,8 @@ class AddHabit extends Component {
     this.setState({
       name: '',
       description: '',
-      numberOfDays: '',
-      category: '',
+      number_of_days: '',
+      category_id: '',
       stars: [{}, {}, {}, {}, {}, {}, {}]
     })
   }
@@ -49,20 +49,20 @@ class AddHabit extends Component {
           </FormGroup>
           <FormGroup>
             <Label>Number of days per week (1 - 7): </Label>
-            <Input type="text" name="numberOfDays" onChange={this.handleChange} value={this.state.numberOfDays} />
+            <Input type="text" name="number_of_days" onChange={this.handleChange} value={this.state.numberOfDays} />
           </FormGroup>
           <FormGroup>
             <Label>Category: </Label>
-             <Input type="select" name="category" id="exampleSelect" value={this.state.category} onChange={this.handleChange}>
-              <option value="Emotional">Emotional</option>
-              <option value="Intellectual">Intellectual</option>
-              <option value="Fitness">Fitness</option>
-              <option value="Social">Social</option>
-              <option value="Environmental">Environmental</option>
-              <option value="Financial">Financial</option>
-              <option value="Spiritual">Spiritual</option>
-              <option value="Health">Health</option>
-              <option value="Relationships/Family">Relationships/Family</option>
+             <Input type="select" name="category_id" id="exampleSelect" value={this.state.category} onChange={this.handleChange}>
+              <option value='1'>Emotional</option>
+              <option value='2'>Intellectual</option>
+              <option value='3'>Fitness</option>
+              <option value='4'>Social</option>
+              <option value='5'>Environmental</option>
+              <option value='6'>Financial</option>
+              <option value='7'>Spiritual</option>
+              <option value='8'>Health</option>
+              <option value='9'>Relationships/Family</option>
             </Input>
           </FormGroup>
           <Button>Submit</Button>
