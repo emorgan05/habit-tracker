@@ -1,6 +1,4 @@
-import initialState from './initialState';
-
-export function habitReducer(state = initialState, action) {
+export function habitReducer(state = { loading: false, habits: [] }, action) {
   switch(action.type) {
     case 'LOADING_HABITS':
       return Object.assign({}, state, {loading: true});

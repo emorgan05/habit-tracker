@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import HabitListItem from '../components/HabitListItem';
+import { fetchHabits } from '../actions/habitActions';
 
 class HabitsList extends Component {
+
+  componentDidMount() {
+    this.props.fetchHabits();
+  }
+
   render() {
     if(!this.props.habits) {
       return (<h3>Loading...</h3>);
@@ -31,8 +39,14 @@ class HabitsList extends Component {
 
 function mapStateToProps(state) {
   return {
-    habits: state.habits
+    habits: state.habits.habits
   }
 }
 
-export default connect(mapStateToProps)(HabitsList);
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchHabits: bindActionCreators(fetchHabits, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HabitsList);

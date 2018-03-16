@@ -5,7 +5,7 @@ import { habitReducer } from './habitReducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  habit: habitReducer
+  habits: habitReducer
   // name reducers
 });
 
