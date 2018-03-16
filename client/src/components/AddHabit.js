@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { createNewHabit } from '../actions/habitActions';
 
 class AddHabit extends Component {
   constructor(props) {
@@ -21,7 +24,7 @@ class AddHabit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onFormSubmit(this.state);
+    this.props.createHabit(this.state);
     this.setState({
       name: '',
       description: '',
@@ -69,4 +72,10 @@ class AddHabit extends Component {
   }
 }
 
-export default AddHabit;
+function mapDispatchToProps(dispatch) {
+  return {
+    createHabit: bindActionCreators(createNewHabit, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(AddHabit);
