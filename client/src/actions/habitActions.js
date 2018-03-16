@@ -1,13 +1,12 @@
 import fetch from 'isomorphic-fetch';
+import HabitsApi from '../api/habitsApi';
 
 export function fetchHabits() {
   return (dispatch) => {
     dispatch({type: 'LOADING_HABITS'});
-    return fetch('http://localhost:3001/habits')
+    return HabitsApi.getUserHabits()
       .then(response => {
-        return response.json();
-      }).then(habits => {
-        return dispatch({ type: 'FETCH_HABITS', payload: habits });
+        return dispatch({ type: 'FETCH_HABITS', payload: response.habits });
       });
   };
 }
