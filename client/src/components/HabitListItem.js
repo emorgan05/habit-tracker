@@ -5,7 +5,7 @@ const HabitListItem = ({habit, onHabitSelect}) => {
   return (
     <li onClick={() => onHabitSelect(habit)}>
       {habit.name}
-      <StarsList habit={habit} />
+      {/* <StarsList habit={habit} /> */}
     </li>
   )
 }
