@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import sessionReducer from './sessionReducer';
-import { habitsReducer } from './habitsReducer';
+import { habitReducer } from './habitReducer';
 // import all the other reducers
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  habits: habitsReducer
+  habit: habitReducer
   // name reducers
 });
 

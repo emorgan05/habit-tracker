@@ -1,4 +1,4 @@
-export function habitsReducer(state = { loading: false, habits: [] }, action) {
+export function habitReducer(state = { loading: false, habits: [] }, action) {
   switch(action.type) {
     case 'LOADING_HABITS':
       return Object.assign({}, state, {loading: true});
