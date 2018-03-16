@@ -33,6 +33,7 @@ class StarListItem extends Component {
     } else {
       return (<li><FaCircleO /></li>)
     }
+    return null;
   }
 }
 
