@@ -1,3 +1,9 @@
+/*
+dark blue: rgb(39, 112, 206)
+light blue: rgb(48, 208, 207)
+orange: rgb(255, 162, 7)
+*/
+
 body {
   margin: 0;
   padding: 0;
@@ -7,13 +13,15 @@ body {
 p {
   font-size: 1.2em;
 }
+
 .navbar {
-  background-color: #80edb3;
+  background-color: rgb(48, 208, 207);
   margin-bottom: 20px;
 }
 
-.habit-details, .add-habit {
-  border: 1px solid #99a59e;
+.add-habit {
+  border: 2px solid rgb(39, 112, 206);
+  background-color: rgb(255, 162, 7, 0.6);
   border-radius: 4px;
   padding: 20px;
 }
@@ -23,7 +31,7 @@ p {
 }
 
 .habits-list li {
-  border: 2px solid #99a59e;
+  border: 3px solid rgb(255, 162, 7);
   margin: 5px;
   padding: 10px;
   list-style-type: none;
@@ -31,7 +39,11 @@ p {
 }
 
 .habit-details {
-  background-color: #b3b3b3;
+  background-color: rgb(255, 162, 7, 0.6);
+  color: rgb(39, 112, 206);
+  border: 2px solid rgb(39, 112, 206);
+  border-radius: 4px;
+  padding: 20px;
 }
 
 #root > div > div > div:nth-child(2) > div > svg {
