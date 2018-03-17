@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { logOutUser } from '../actions/sessionActions';
 
 class Navigation extends Component {
   constructor(props) {
@@ -41,4 +45,10 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+function mapDispatchToProps(dispatch) {
+  return {
+    logOutUser: bindActionCreators(logOutUser, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Navigation);
