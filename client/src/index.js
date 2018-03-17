@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter, Route } from 'react-router-dom';
 
-import App from './App';
+// import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore';
@@ -18,14 +18,14 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router>
       <div>
         <Route exact path="/" component={LoginPage} />
         <Route path="/habits" component={HabitsList} />
         <Route path="/habits/:id" component={HabitDetails} />
         <Route path="/habits/new" component={AddHabit} />
       </div>
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
