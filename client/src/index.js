@@ -13,6 +13,7 @@ import LoginPage from './containers/LoginPage';
 import HabitsList from './containers/HabitsList';
 import HabitDetails from './components/HabitDetails';
 import AddHabit from './containers/AddHabit';
+import Navigation from './components/Navigation';
 
 const store = configureStore();
 
@@ -20,6 +21,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+        <Navigation />
         <Route exact path="/" component={LoginPage} />
         <Route path="/habits" component={HabitsList} />
         <Route path="/habits/:id" component={HabitDetails} />
