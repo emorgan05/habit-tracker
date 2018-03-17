@@ -6,10 +6,11 @@ class Navigation extends Component {
     super(props);
   }
 
-  logout = () => {
-
+  logOut = (event) => {
+    event.preventDefault();
+    this.props.logOutUser();
   }
-  
+
   render () {
     if(this.props.logged_in) {
       return (
@@ -17,7 +18,7 @@ class Navigation extends Component {
           <NavbarBrand href="/">HabitTracker</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/logout" onClick={this.logout} >Log Out</NavLink>
+              <NavLink href="/logout" onClick={this.logOut} >Log Out</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
