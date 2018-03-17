@@ -1,5 +1,5 @@
 import React from 'react';
-import StarsList from './StarsList';
+// import StarsList from './StarsList';
 
 const HabitListItem = ({habit, onHabitSelect}) => {
   return (
