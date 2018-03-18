@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Container, Row, Col } from 'reactstrap';
 
-import LoginPage from './LoginPage';
+import LoginPage from '../components/LoginPage';
 import SignupPage from '../components/SignupPage';
+import * as sessionActions from '../actions/sessionActions';
 
 class LoginContainer extends Component {
   render () {
@@ -12,7 +14,7 @@ class LoginContainer extends Component {
         <Container>
           <Row>
             <Col xs="6">
-              <LoginPage />
+              <LoginPage loginUser={this.props.actions.loginUser} />
             </Col>
             <Col xs="6">
               <SignupPage />
@@ -24,10 +26,10 @@ class LoginContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapDispatchToProps(dispatch) {
   return {
-    logged_in: state.session
+    actions: bindActionCreators(sessionActions, dispatch)
   }
 }
 
-export default connect(mapStateToProps)(LoginContainer);
+export default connect(null, mapDispatchToProps)(LoginContainer);

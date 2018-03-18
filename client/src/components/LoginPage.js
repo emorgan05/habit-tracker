@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as sessionActions from '../actions/sessionActions';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -24,7 +21,7 @@ class LoginPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.actions.loginUser(this.state.credentials);
+    this.props.loginUser(this.state.credentials);
   }
 
   render () {
@@ -47,10 +44,4 @@ class LoginPage extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(sessionActions, dispatch)
-  }
-}
-
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default LoginPage;
