@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 
+import LoginPage from './LoginPage';
+import SignupPage from '../components/SignupPage';
+
 class LoginContainer extends Component {
   render () {
     return (
       <div className="App">
-        <Navigation logged_in={this.props.logged_in}/>
         <Container>
           <Row>
             <Col xs="6">

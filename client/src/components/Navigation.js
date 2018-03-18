@@ -42,10 +42,16 @@ class Navigation extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    logged_in: state.session
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     logOutUser: bindActionCreators(logOutUser, dispatch)
   }
 }
 
-export default connect(null, mapDispatchToProps)(Navigation);
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
