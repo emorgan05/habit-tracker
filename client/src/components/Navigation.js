@@ -6,9 +6,6 @@ import { bindActionCreators } from 'redux';
 import { logOutUser } from '../actions/sessionActions';
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   logOut = (event) => {
     event.preventDefault();

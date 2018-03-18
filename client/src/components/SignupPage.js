@@ -11,6 +11,7 @@ class SignupPage extends Component {
       }
     };
   }
+  
   render () {
     return (
       <div className="login">
