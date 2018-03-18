@@ -13,7 +13,7 @@ import LoginContainer from './containers/LoginContainer';
 import HabitsList from './containers/HabitsList';
 import HabitDetails from './components/HabitDetails';
 import AddHabit from './containers/AddHabit';
-import Navigation from './components/Navigation';
+import Navigation from './containers/Navigation';
 
 const store = configureStore();
 
