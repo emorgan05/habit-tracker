@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router';
 
 import { logOutUser } from '../actions/sessionActions';
 
@@ -10,6 +11,9 @@ class Navigation extends Component {
   logOut = (event) => {
     event.preventDefault();
     this.props.logOutUser();
+    if(!this.props.logged_in) {
+      return (<Redirect to="/" />);
+    }
   }
 
   render () {
