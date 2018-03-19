@@ -11,9 +11,7 @@ class Navigation extends Component {
   logOut = (event) => {
     event.preventDefault();
     this.props.logOutUser();
-    if(!this.props.logged_in) {
-      return (<Redirect to="/" />);
-    }
+    this.props.history.push('/');
   }
 
   render () {
