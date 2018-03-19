@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 
@@ -20,7 +20,8 @@ class HabitsContainer extends Component {
               <HabitsList fetchHabits={this.props.fetchHabits} habits={this.props.habits} />
             </Col>
             <Col xs="6">
-              <HabitDetails />
+              <Route path={`${this.props.match.url}/:habitId`} component={HabitDetails} />
+              <Route exact path={this.props.match.url} render={() => (<p>Select a habit to view details</p>)} />
             </Col>
           </Row>
           <Row>

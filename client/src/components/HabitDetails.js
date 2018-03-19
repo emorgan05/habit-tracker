@@ -1,18 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const HabitDetails = ({selectedHabit}) => {
-  if(selectedHabit) {
-    return (
-      <div className="habit-details">
-        <p>Name: {selectedHabit.name}</p>
-        <p>Description: {selectedHabit.description}</p>
-        <p>Goal: I want to {selectedHabit.name.toLowerCase()} {selectedHabit.number_of_days} times each week</p>
-        <p>Category: {selectedHabit.category.title}</p>
-      </div>
-    )
+const HabitDetails = ({habit}) => {
+  return (
+    <div className="habit-details">
+      <p>Name: {habit.name}</p>
+      <p>Description: {habit.description}</p>
+      <p>Goal: I want to {habit.name.toLowerCase()} {habit.number_of_days} times each week</p>
+      <p>Category: {habit.category.title}</p>
+    </div>
+  )
+}
+
+const mapStateToProps = (state, ownProps) => {
+  const habit = state.habits.habits.find(habit => habit.id == ownProps.match.params.habitId)
+
+  if(habit) {
+    return { habit }
   } else {
-    return (<div></div>)
+    return { habit: {} }
   }
 }
 
-export default HabitDetails;
+export default connect(mapStateToProps)(HabitDetails);
