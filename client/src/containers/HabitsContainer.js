@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import HabitsList from './HabitsList';
-import HabitDetails from '../components/HabitDetails';
+import HabitDetails from './HabitDetails';
 import AddHabit from './AddHabit';
 
 const HabitsContainer = ({ match, habits }) => {
