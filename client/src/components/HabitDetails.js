@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Col } from 'reactstrap';
 
 const HabitDetails = ({habit}) => {
   return (
-    <div className="habit-details">
-      <p>Name: {habit.name}</p>
-      <p>Description: {habit.description}</p>
-      <p>Goal: I want to {habit.name.toLowerCase()} {habit.number_of_days} times each week</p>
-      <p>Category: {habit.category.title}</p>
-    </div>
+    <Col xs="6">
+      <div className="habit-details">
+        <p>Name: {habit.name}</p>
+        <p>Description: {habit.description}</p>
+        <p>Goal: I want to {habit.name.toLowerCase()} {habit.number_of_days} times each week</p>
+        <p>Category: {habit.category.title}</p>
+      </div>
+    </Col>
   )
 }
 
