@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
 import HabitListItem from '../components/HabitListItem';
-import { fetchHabits } from '../actions/habitActions';
 
 class HabitsList extends Component {
 
@@ -19,8 +15,7 @@ class HabitsList extends Component {
     const habitListItems = this.props.habits.map((habit, index) => {
         return (
           <HabitListItem
-            onHabitSelect={this.props.onHabitSelect}
-            key={index}
+            key={habit.id}
             habit={habit}
           />
         )
@@ -37,16 +32,4 @@ class HabitsList extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    habits: state.habits.habits
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchHabits: bindActionCreators(fetchHabits, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HabitsList);
+export default HabitsList;
