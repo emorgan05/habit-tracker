@@ -11,9 +11,9 @@ const HabitsContainer = ({ match, habits }) => {
     <div className="App">
       <HabitsList />
       <Switch>
-        {/* <Route path={`${match.url}/new`} component={AddHabit} />
+        <Route path={`${match.url}/new`} component={AddHabit} />
         <Route path={`${match.url}/:habitId`} component={HabitDetails} />
-        <Route exact path={match.url} render={() => (<p>Select a habit to view details</p>)} /> */}
+        <Route exact path={match.url} render={() => (<p>Select a habit to view details</p>)} />
       </Switch>
     </div>
   )
