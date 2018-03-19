@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StarsList from './StarsList';
+import FaCircleO from 'react-icons/lib/fa/circle-o';
+// import StarsList from './StarsList';
 
 const HabitListItem = ({habit}) => {
   return (
     <Link key={habit.id} to={`/habits/${habit.id}`}>
       <li>
         {habit.name}
-        <StarsList habit={habit} />
+        {/* <FaCircleO onClick={this.props.handleClick}/> */}
+        {/* <StarsList habit={habit} /> */}
       </li>
     </Link>
   )

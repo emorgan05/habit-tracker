@@ -23,7 +23,7 @@ class LoginPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.loginUser(this.state.credentials);
-    // this.props.history.push('/habits');
+    this.props.history.push('/habits');
   }
 
   render () {

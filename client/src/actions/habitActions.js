@@ -18,3 +18,12 @@ export function createNewHabit(habit) {
       });
   };
 }
+
+export function createStar(star) {
+  return (dispatch) => {
+    return HabitsApi.createNewStar(star)
+      .then(response => {
+        return dispatch({ type: 'CREATE_STAR', payload: response});
+      });
+  };
+}

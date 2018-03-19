@@ -6,7 +6,7 @@ import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 import { Container, Col, Row } from 'reactstrap';
 
 import HabitListItem from '../components/HabitListItem';
-import { fetchHabits } from '../actions/habitActions';
+import { fetchHabits, createStar } from '../actions/habitActions';
 
 class HabitsList extends Component {
 
@@ -62,7 +62,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchHabits: bindActionCreators(fetchHabits, dispatch)
+    fetchHabits: bindActionCreators(fetchHabits, dispatch),
+    createStar: bindActionCreators(createStar, dispatch)
   }
 }
 
