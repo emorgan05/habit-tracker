@@ -11,6 +11,8 @@ import { fetchHabits, createStar } from '../actions/habitActions';
 class HabitsList extends Component {
 
   componentDidMount() {
+    console.log("Fetching habits", this.props);
+    // setTimeout(this.props.fetchHabits, 2000);
     this.props.fetchHabits();
   }
 
@@ -24,6 +26,7 @@ class HabitsList extends Component {
           <HabitListItem
             key={habit.id}
             habit={habit}
+            handleClick={this.props.createStar}
           />
         )
       }
