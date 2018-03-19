@@ -25,7 +25,7 @@ class HabitsContainer extends Component {
           </Row>
           <Row>
             <Col xs="6">
-              <Link to="/habits/new">
+              <Link to="/habits/new" exact="true">
                 <FaPlusSquareO />
               </Link>
             </Col>
