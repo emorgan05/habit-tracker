@@ -32,7 +32,8 @@ class AddHabit extends Component {
       number_of_days: '',
       category_id: '',
       stars: [{}, {}, {}, {}, {}, {}, {}]
-    })
+    });
+    this.props.history.push('/habits');
   }
 
   render() {

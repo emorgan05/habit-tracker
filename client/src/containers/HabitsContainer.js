@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import HabitsList from './HabitsList';
 import HabitDetails from '../components/HabitDetails';
@@ -24,4 +25,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default HabitsContainer;
+export default connect(mapStateToProps)(HabitsContainer);

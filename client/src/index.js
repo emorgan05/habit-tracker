@@ -11,8 +11,6 @@ import configureStore from './store/configureStore';
 
 import LoginContainer from './containers/LoginContainer';
 import HabitsContainer from './containers/HabitsContainer';
-import HabitDetails from './components/HabitDetails';
-import AddHabit from './containers/AddHabit';
 import Navigation from './containers/Navigation';
 
 const store = configureStore();
