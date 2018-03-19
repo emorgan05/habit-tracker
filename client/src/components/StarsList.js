@@ -10,11 +10,11 @@ class StarsList extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     stars: [].concat(this.props.habit.stars, this.state.stars.splice(0, this.props.habit.stars.length - 1))
-  //   });
-  // }
+  componentDidMount() {
+    this.setState({
+      stars: [].concat(this.props.habit.stars, this.state.stars.splice(0, this.props.habit.stars.length - 1))
+    });
+  }
 
   render() {
     if (!this.state.stars) {
