@@ -7,11 +7,15 @@ import { Redirect } from 'react-router';
 import { logOutUser } from '../actions/sessionActions';
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    // this.logOut = this.logOut.bind(this);
+  }
 
   logOut = (event) => {
     event.preventDefault();
     this.props.logOutUser();
-  
+    // this.props.history.push('/');
   }
 
   render () {
