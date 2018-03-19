@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore';
 
 import LoginContainer from './containers/LoginContainer';
-import HabitsList from './containers/HabitsList';
+import HabitsContainer from './containers/HabitsContainer';
 import HabitDetails from './components/HabitDetails';
 import AddHabit from './containers/AddHabit';
 import Navigation from './containers/Navigation';
@@ -23,7 +23,7 @@ ReactDOM.render(
       <div>
         <Navigation />
         <Route exact path="/" component={LoginContainer} />
-        <Route path="/habits" component={HabitsList} />
+        <Route path="/habits" component={HabitsContainer} />
         <Route path="/habits/:id" component={HabitDetails} />
         <Route path="/habits/new" component={AddHabit} />
       </div>
