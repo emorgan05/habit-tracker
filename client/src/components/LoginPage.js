@@ -10,6 +10,7 @@ class LoginPage extends Component {
         password: ''
       }
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (event) => {
@@ -22,6 +23,7 @@ class LoginPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.loginUser(this.state.credentials);
+    // this.props.history.push('/habits');
   }
 
   render () {

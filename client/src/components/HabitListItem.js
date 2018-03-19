@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import StarsList from './StarsList';
+// import StarsList from './2StarsList';
 
 const HabitListItem = ({habit}) => {
   return (
