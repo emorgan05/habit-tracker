@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
+import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
+
 import HabitListItem from '../components/HabitListItem';
+import { fetchHabits } from '../actions/habitActions';
 
 class HabitsList extends Component {
 
@@ -27,9 +33,26 @@ class HabitsList extends Component {
         <ul>
           {habitListItems}
         </ul>
+        <div>
+          <Link to="/habits/new" exact="true">
+            <FaPlusSquareO />
+          </Link>
+        </div>
       </div>
     )
   }
 }
 
-export default HabitsList;
+function mapStateToProps(state) {
+  return {
+    habits: state.habits.habits
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchHabits: bindActionCreators(fetchHabits, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HabitsList);
