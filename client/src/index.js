@@ -24,8 +24,6 @@ ReactDOM.render(
         <Navigation />
         <Route exact path="/" component={LoginContainer} />
         <Route path="/habits" component={HabitsContainer} />
-        {/* <Route path="/habits/:id" component={HabitDetails} /> */}
-        <Route path="/habits/new" component={AddHabit} />
       </div>
     </Router>
   </Provider>,
