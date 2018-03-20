@@ -1,4 +1,4 @@
 class StarSerializer < ActiveModel::Serializer
-  attributes :id, :date, :completed
+  attributes :id, :day, :completed
   belongs_to :habit
 end
