@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Redirect } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 import { logOutUser } from '../actions/sessionActions';
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    // this.logOut = this.logOut.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
 
   logOut = (event) => {
     event.preventDefault();
     this.props.logOutUser();
-    // this.props.history.push('/');
+    this.props.history.push('/');
   }
 
   render () {
@@ -60,4 +60,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation));
