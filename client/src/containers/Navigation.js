@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { logOutUser } from '../actions/sessionActions';
+import NavBarPres from '../components/NavBarPres';
 
 class Navigation extends Component {
   constructor(props) {
@@ -19,32 +19,9 @@ class Navigation extends Component {
   }
 
   render () {
-    if(this.props.logged_in) {
-      return (
-        <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">HabitTracker</NavbarBrand>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/logout" onClick={this.logOut} >Log Out</NavLink>
-            </NavItem>
-          </Nav>
-        </Navbar>
-      );
-    } else {
-      return (
-        <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">HabitTracker</NavbarBrand>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/">Sign Up</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/">Log In</NavLink>
-            </NavItem>
-          </Nav>
-        </Navbar>
-      );
-    }
+    return (
+      <NavBarPres logged_in={this.props.logged_in} logOut={this.logOut} />
+    )
   }
 }
 
