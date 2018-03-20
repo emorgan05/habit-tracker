@@ -7,7 +7,7 @@ export default function sessionReducer(state = initialState.session, action) {
 
     case 'LOG_OUT':
       return !!sessionStorage.jwt
-      
+
     default:
       return state;
   }
