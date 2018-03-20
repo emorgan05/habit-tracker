@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'reactstrap';
 import { Redirect } from 'react-router';
 
 import LoginPage from '../components/LoginPage';
-import SignupPage from '../components/SignupPage';
 import * as sessionActions from '../actions/sessionActions';
 
 class LoginContainer extends Component {
@@ -19,9 +18,6 @@ class LoginContainer extends Component {
             <Row>
               <Col xs="6">
                 <LoginPage loginUser={this.props.actions.loginUser} />
-              </Col>
-              <Col xs="6">
-                <SignupPage />
               </Col>
             </Row>
           </Container>
