@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { createNewHabit } from '../actions/habitActions';
-import AddHabitForm from './AddHabitForm';
+import AddHabitForm from '../components/AddHabitForm';
 
 class AddHabit extends Component {
   constructor(props) {
