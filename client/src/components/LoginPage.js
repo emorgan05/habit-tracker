@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
+import LoginForm from './LoginForm';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -29,20 +30,7 @@ class LoginPage extends Component {
 
   render () {
     return (
-      <div className="login">
-        <h5>Log In</h5>
-        <Form onSubmit={this.handleSubmit} >
-          <FormGroup>
-            <Label>Email: </Label>
-            <Input type="text" name="email" onChange={this.handleChange} value={this.state.credentials.email} />
-          </FormGroup>
-          <FormGroup>
-            <Label>Password: </Label>
-            <Input type="password" name="password" onChange={this.handleChange} value={this.state.credentials.password} />
-          </FormGroup>
-          <Button>Submit</Button>
-        </Form>
-      </div>
+      <LoginForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} login={this.state}/>
     )
   }
 }
