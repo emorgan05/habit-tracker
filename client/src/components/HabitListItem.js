@@ -33,7 +33,7 @@ class HabitListItem extends Component {
   }
 
   handleClick = (event) => {
-    event.preventDefault;
+    event.preventDefault();
     this.props.createStar(this.state);
   }
 
