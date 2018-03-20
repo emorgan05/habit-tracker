@@ -6,13 +6,11 @@ import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
 import { Container, Col, Row } from 'reactstrap';
 
 import HabitListItem from '../components/HabitListItem';
-import { fetchHabits, createStar } from '../actions/habitActions';
+import { fetchHabits } from '../actions/habitActions';
 
 class HabitsList extends Component {
 
   componentDidMount() {
-    console.log("Fetching habits", this.props);
-    // setTimeout(this.props.fetchHabits, 2000);
     this.props.fetchHabits();
   }
 
@@ -24,9 +22,8 @@ class HabitsList extends Component {
     const habitListItems = this.props.habits.map((habit, index) => {
         return (
           <HabitListItem
-            key={habit.id}
+            key={index}
             habit={habit}
-            handleClick={this.props.createStar}
           />
         )
       }
@@ -65,8 +62,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchHabits: bindActionCreators(fetchHabits, dispatch),
-    createStar: bindActionCreators(createStar, dispatch)
+    fetchHabits: bindActionCreators(fetchHabits, dispatch)
   }
 }
 
