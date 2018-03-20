@@ -1,6 +1,5 @@
 class StarsController < ApplicationController
   def create
-    current_habit = Habit.find(params[:habit_id])
     star = Star.new(star_params)
     if star.save
       render json: star
