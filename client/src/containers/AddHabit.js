@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
+
 import { createNewHabit } from '../actions/habitActions';
 import AddHabitForm from './AddHabitForm';
 
