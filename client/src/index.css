@@ -39,6 +39,11 @@ p {
   font-size: 1.2em;
 }
 
+.habits-list-item p {
+  font-size: 1em;
+  color: rgb(48, 208, 207);
+}
+
 .habit-details {
   background-color: rgb(255, 162, 7, 0.6);
   color: rgb(39, 112, 206);

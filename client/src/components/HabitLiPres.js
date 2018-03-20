@@ -10,7 +10,7 @@ const HabitLiPres = ({habit_id, name, handleClick}) => {
           {name}
         </li>
       </Link>
-      <FaCircleO onClick={handleClick}/>
+      <p><FaCircleO onClick={handleClick}/> Completed?</p>
     </div>
   )
 }
