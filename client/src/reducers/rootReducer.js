@@ -3,10 +3,18 @@ import sessionReducer from './sessionReducer';
 import { habitReducer } from './habitReducer';
 // import all the other reducers
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   session: sessionReducer,
   habits: habitReducer
   // name reducers
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === 'LOG_OUT') {
+    state = undefined
+  }
+
+  return appReducer(state, action)
+}
 
 export default rootReducer;
