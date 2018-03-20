@@ -14,9 +14,10 @@ class HabitListItem extends Component {
       completed: false,
       habit_id: ''
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = (event) => {
+  componentDidMount() {
     // calculate current day of year (1 - 365/366)
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
@@ -29,19 +30,24 @@ class HabitListItem extends Component {
       completed: true,
       habit_id: this.props.habit.id
     });
+  }
 
+  handleClick = (event) => {
+    event.preventDefault;
     this.props.createStar(this.state);
   }
 
   render() {
     return (
-      <Link key={this.props.habit.id} to={`/habits/${this.props.habit.id}`}>
-        <li>
-          {this.props.habit.name}
-          <FaCircleO onClick={this.handleClick}/>
-          {/* <StarsList habit={habit} /> */}
-        </li>
-      </Link>
+      <div>
+        <Link key={this.props.habit.id} to={`/habits/${this.props.habit.id}`}>
+          <li>
+            {this.props.habit.name}
+            {/* <StarsList habit={habit} /> */}
+          </li>
+        </Link>
+        <FaCircleO onClick={this.handleClick}/>
+      </div>
     )
   }
 }
