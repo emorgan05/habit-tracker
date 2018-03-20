@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import FaCircleO from 'react-icons/lib/fa/circle-o';
-// import StarsList from './StarsList';
 import { createStar } from '../actions/starsActions';
+
+import HabitLiPres from './HabitLiPres';
 
 class HabitListItem extends Component {
   constructor(props) {
@@ -40,15 +39,7 @@ class HabitListItem extends Component {
 
   render() {
     return (
-      <div className="habits-list-item">
-        <Link key={this.props.habit.id} to={`/habits/${this.props.habit.id}`}>
-          <li>
-            {this.props.habit.name}
-            {/* <StarsList habit={habit} /> */}
-          </li>
-        </Link>
-        <FaCircleO onClick={this.handleClick}/>
-      </div>
+      <HabitLiPres habit_id={this.props.habit.id} name={this.props.habit.name} handleClick={this.handleClick} />
     )
   }
 }
