@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FaPlusSquareO from 'react-icons/lib/fa/plus-square';
-import { Container, Col, Row } from 'reactstrap';
 
 const HabitsListPres = ({habitLi}) => {
   return (
