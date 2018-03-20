@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStar } from '../actions/starsActions';
 
-import HabitLiPres from './HabitLiPres';
+import HabitLiPres from '../components/HabitLiPres';
 
 class HabitListItem extends Component {
   constructor(props) {

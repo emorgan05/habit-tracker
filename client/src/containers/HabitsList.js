@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import HabitListItem from '../components/HabitListItem';
+import HabitListItem from './HabitListItem';
 import { fetchHabits } from '../actions/habitActions';
 import HabitsListPres from '../components/HabitsListPres';
 
