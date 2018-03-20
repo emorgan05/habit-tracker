@@ -10,6 +10,8 @@ const HabitDetails = ({habit}) => {
         <p>Description: {habit.description}</p>
         <p>Goal: I want to {habit.name.toLowerCase()} {habit.number_of_days} times each week</p>
         <p>Category: {habit.category.title}</p>
+        <p>Current Streak: {habit.current_streak}</p>
+        <p>Longest Streak: {habit.max_streak}</p>
       </div>
     </Col>
   )
