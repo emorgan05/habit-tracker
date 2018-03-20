@@ -13,19 +13,19 @@ const AddHabitForm = (props) => {
             <Form onSubmit={props.handleSubmit} >
               <FormGroup>
                 <Label>Name: </Label>
-                <Input type="text" name="name" onChange={props.handleChange} value={props.name} />
+                <Input type="text" name="name" onChange={props.handleChange} value={props.habit.name} />
               </FormGroup>
               <FormGroup>
                 <Label>Description: </Label>
-                <Input type="text" name="description" onChange={props.handleChange} value={props.description} />
+                <Input type="text" name="description" onChange={props.handleChange} value={props.habit.description} />
               </FormGroup>
               <FormGroup>
                 <Label>Number of days per week (1 - 7): </Label>
-                <Input type="text" name="number_of_days" onChange={props.handleChange} value={props.number_of_days} />
+                <Input type="text" name="number_of_days" onChange={props.handleChange} value={props.habit.number_of_days} />
               </FormGroup>
               <FormGroup>
                 <Label>Category: </Label>
-                 <Input type="select" name="category_id" id="exampleSelect" value={props.category} onChange={props.handleChange}>
+                 <Input type="select" name="category_id" id="exampleSelect" value={props.habit.category} onChange={props.handleChange}>
                   <option value='1'>Emotional</option>
                   <option value='2'>Intellectual</option>
                   <option value='3'>Fitness</option>

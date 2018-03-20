@@ -38,7 +38,7 @@ class AddHabit extends Component {
 
   render() {
     return (
-      <AddHabitForm {...this.state} />
+      <AddHabitForm habit={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
     )
   }
 }
