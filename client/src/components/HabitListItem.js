@@ -40,7 +40,7 @@ class HabitListItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className="habits-list-item">
         <Link key={this.props.habit.id} to={`/habits/${this.props.habit.id}`}>
           <li>
             {this.props.habit.name}

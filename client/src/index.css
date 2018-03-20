@@ -31,7 +31,7 @@ p {
   padding-left: 0px;
 }
 
-.habits-list li {
+.habits-list-item {
   border: 3px solid rgb(255, 162, 7);
   margin: 5px;
   padding: 10px;
