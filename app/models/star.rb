@@ -16,7 +16,6 @@ class Star < ApplicationRecord
         streak = 0
       end
     end
-
     max_streak + 1
   end
 
