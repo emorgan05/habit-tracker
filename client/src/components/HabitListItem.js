@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FaCircleO from 'react-icons/lib/fa/circle-o';
 // import StarsList from './StarsList';
-import { createStar } from '../actions/habitActions';
+import { createStar } from '../actions/starsActions';
 
 class HabitListItem extends Component {
   constructor(props) {

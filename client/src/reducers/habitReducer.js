@@ -9,9 +9,6 @@ export function habitReducer(state = { loading: false, habits: [] }, action) {
     case 'CREATE_HABIT':
       return Object.assign({}, state, {loading: false, habits: [].concat(state.habits, action.payload) });
 
-    case 'CREATE_STAR':
-      return Object.assign({}, state, {loading: false, habits: [].concat(state.habits.stars, action.payload) });
-      
     default:
       return state;
   }
