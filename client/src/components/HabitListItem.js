@@ -34,6 +34,7 @@ class HabitListItem extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
+    event.target.style.backgroundColor = '#A7CD67';
     this.props.createStar(this.state);
   }
 
