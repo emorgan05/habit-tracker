@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import FaCircleO from 'react-icons/lib/fa/circle-o';
 
 const HabitLiPres = ({habit_id, name, handleClick}) => {
@@ -10,7 +11,7 @@ const HabitLiPres = ({habit_id, name, handleClick}) => {
           {name}
         </li>
       </Link>
-      <p><FaCircleO onClick={handleClick}/> Completed?</p>
+      <Button color="info" onClick={handleClick}>Completed?</Button>{''}
     </div>
   )
 }
