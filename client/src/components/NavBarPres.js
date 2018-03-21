@@ -19,9 +19,6 @@ const NavBarPres = ({logged_in, logOut}) => {
         <NavbarBrand href="/">HabitTracker</NavbarBrand>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/">Sign Up</NavLink>
-          </NavItem>
-          <NavItem>
             <NavLink href="/">Log In</NavLink>
           </NavItem>
         </Nav>

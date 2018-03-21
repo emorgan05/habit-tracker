@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HabitTracker is a tool to track your personal goals and habits. Once you create habits, you can see them all in a list, to remind you of what you want to do. All kinds of habits can be tracked including health and fitness habits, educational habits, and relationship habits.
 
-Things you may want to cover:
+You can click to log that you have completed your habit for the day. If you click on the habit, you will see all the details for that habit plus your current streak and longest streak to date.
 
-* Ruby version
+# Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* System dependencies
+## Installing
+Fork this repo and clone it to your computer. Run
+```
+bundle install
+```
+and then migrate the database with
+```
+rake db:migrate
+```
+There is a seed file that will give you the list of categories, run
+```
+rake db:seed
+```
 
-* Configuration
+# Buit with
+Rails API
+PostgresSQL database
+Knock and JWT for authentication
+React
+Redux
 
-* Database creation
+# Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details
