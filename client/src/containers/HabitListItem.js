@@ -9,11 +9,15 @@ class HabitListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      day: '',
-      completed: false,
-      habit_id: ''
+      star: {
+        day: '',
+        completed: false,
+        habit_id: ''
+      },
+      counter: 0
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.likeHandleClick = this.likeHandleClick.bind(this);
+
   }
 
   componentDidMount() {
@@ -34,12 +38,37 @@ class HabitListItem extends Component {
   handleClick = (event) => {
     event.preventDefault();
     event.target.style.backgroundColor = 'rgb(40, 198, 150)';
-    this.props.createStar(this.state);
+    this.props.createStar(this.state.star);
+  }
+
+  likeHandleClick(event){
+    //make a fetch request to API to get habits
+    //log them to the console
+
+    console.log('a')
+    fetch('http://localhost:3001/habitsdsdsafdsfds', {
+      method: 'GET',
+      headers: {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
+    }).then(response => {
+      if (response.ok) {
+        console.log('b')
+        return response.json()
+      }
+
+      throw new Error(response.statusText)
+    })
+      .then(response => console.log('c', response))
+      .catch(err => console.log('d', err))
+      console.log('e')
+
+      // a e b c + response
+
+      // a e d + err
   }
 
   render() {
     return (
-      <HabitLiPres habit_id={this.props.habit.id} name={this.props.habit.name} handleClick={this.handleClick} />
+      <HabitLiPres habit_id={this.props.habit.id} name={this.props.habit.name} handleClick={this.handleClick} likeHandleClick={this.likeHandleClick} counter={this.state.counter} />
     )
   }
 }
