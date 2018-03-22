@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import FaCircleO from 'react-icons/lib/fa/circle-o';
 
 const HabitLiPres = ({habit_id, name, handleClick}) => {
   return (
