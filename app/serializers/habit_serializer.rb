@@ -18,7 +18,7 @@ class HabitSerializer < ActiveModel::Serializer
         streak = 0
       end
     end
-    max_streak + 1
+    max_streak
   end
 
   def current_streak
@@ -35,6 +35,6 @@ class HabitSerializer < ActiveModel::Serializer
       end
     end
 
-    streak + 1
+    streak
   end
 end
