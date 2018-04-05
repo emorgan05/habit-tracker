@@ -20,6 +20,10 @@ There is a seed file that will give you the list of categories, run
 ```
 rake db:seed
 ```
+To launch the app, run
+```
+foreman start
+```
 
 # Buit with
 Rails API
