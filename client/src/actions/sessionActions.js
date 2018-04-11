@@ -21,3 +21,12 @@ export function logOutUser() {
   sessionStorage.removeItem('jwt');
   return { type: 'LOG_OUT' }
 }
+
+export function createNewUser(credentials) {
+  return (dispatch) => {
+    return SessionApi.createUser(credentials)
+      .then(response => {
+        return dispatch({ type: 'CREATE_USER', payload: response });
+      });
+  };
+}
