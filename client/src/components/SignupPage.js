@@ -25,7 +25,9 @@ class SignupPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.createNewUser(this.state.credentials);
-    this.props.history.push('/habits');
+    if (this.props.logged_in) {
+      this.props.history.push('/habits');
+    }
   }
 
   render () {

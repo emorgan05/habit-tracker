@@ -21,7 +21,7 @@ class LoginContainer extends Component {
                 <LoginPage loginUser={this.props.actions.loginUser} />
               </Col>
               <Col xs="6">
-                <SignupPage createNewUser={this.props.actions.createNewUser} />
+                <SignupPage createNewUser={this.props.actions.createNewUser} logged_in={this.props.logged_in} />
               </Col>
             </Row>
           </Container>
