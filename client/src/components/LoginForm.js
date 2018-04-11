@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 const LoginForm = (props) => {
   return (
     <div className="login">
-      <h5>Log In</h5>
+      <h5>{props.title}</h5>
       <Form onSubmit={props.handleSubmit} >
         <FormGroup>
           <Label>Email: </Label>

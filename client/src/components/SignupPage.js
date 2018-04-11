@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import LoginForm from './LoginForm';
 
-class LoginPage extends Component {
+class SignupPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,9 +30,9 @@ class LoginPage extends Component {
 
   render () {
     return (
-      <LoginForm title={"Log In"} handleChange={this.handleChange} handleSubmit={this.handleSubmit} login={this.state}/>
+      <LoginForm title={"Sign Up"} handleChange={this.handleChange} handleSubmit={this.handleSubmit} login={this.state}/>
     )
   }
 }
 
-export default withRouter(LoginPage);
+export default withRouter(SignupPage);
