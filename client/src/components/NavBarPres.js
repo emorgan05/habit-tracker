@@ -21,6 +21,9 @@ const NavBarPres = ({logged_in, logOut}) => {
           <NavItem>
             <NavLink href="/">Log In</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="/">Sign Up</NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
     );
