@@ -14,7 +14,7 @@ class SessionApi {
   }
 
   static createUser(credentials) {
-    const request = new Request('http://localhost:3001/users', {
+    const request = new Request('http://localhost:3001/api/v1/users', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json'

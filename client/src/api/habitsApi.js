@@ -5,7 +5,7 @@ class HabitsApi {
 
   static getUserHabits() {
     const headers = this.requestHeaders();
-    const request = new Request('http://localhost:3001/habits', {
+    const request = new Request('http://localhost:3001/api/v1/habits', {
       method: 'GET',
       headers: headers
     });
@@ -17,7 +17,7 @@ class HabitsApi {
 
   static createHabit(habit) {
     const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request('http://localhost:3001/habits', {
+    const request = new Request('http://localhost:3001/api/v1/habits', {
       method: 'POST',
       headers: headers,
       body: JSON.stringify({habit: habit})
