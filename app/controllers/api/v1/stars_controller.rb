@@ -1,4 +1,4 @@
-module API::V1
+module Api::V1
   class StarsController < ApplicationController
     def create
       star = Star.new(star_params)

@@ -1,4 +1,4 @@
-module API::V1
+module Api::V1
   class HabitsController < ApplicationController
     before_action :authenticate_user
 
