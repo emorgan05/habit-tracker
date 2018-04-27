@@ -34,5 +34,11 @@ module HabitTracker
     #   'Access-Control-Allow-Origin' => '*',
     #   'Access-Control-Request-Method' => '*'
     # })
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://localhost:3000', 'https://salty-cove-50283.herokuapp.com/' #replace this url with that of your own heroku client app
+        resource '*', :headers => :any, :methods => [:get]
+      end
+    end
   end
 end
