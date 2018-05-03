@@ -16,8 +16,8 @@ class HabitsApi {
   }
 
   static createHabit(habit) {
-    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request('https://www.salty-cove-50283.herokuapp.com/api/v1/habits', {
+    const headers = Object.assign({'Content-Type': 'application/json', 'Accept': 'application/json'}, this.requestHeaders());
+    const request = new Request('/api/v1/habits', {
       method: 'POST',
       headers: headers,
       body: JSON.stringify({habit: habit})

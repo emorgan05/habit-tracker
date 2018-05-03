@@ -2,11 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/api": {
-      "target": "https://salty-cove-50283.herokuapp.com"
-    }
-  },
+  "proxy": "https://salty-cove-50283.herokuapp.com",
   "dependencies": {
     "ajv": "^6.2.1",
     "bootstrap": "^4.0.0",

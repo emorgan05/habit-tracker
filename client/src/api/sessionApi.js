@@ -1,6 +1,6 @@
 class SessionApi {
   static login(credentials) {
-    const request = new Request('api/v1/user_token', {
+    const request = new Request('/api/v1/user_token', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ class SessionApi {
   }
 
   static createUser(credentials) {
-    const request = new Request('api/v1/users', {
+    const request = new Request('/api/v1/users', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json'
