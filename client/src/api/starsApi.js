@@ -4,7 +4,7 @@ class StarsApi {
   }
 
   static createNewStar(star) {
-    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const headers = Object.assign({'Content-Type': 'application/json', 'Accept': 'application/json'}, this.requestHeaders());
     const request = new Request('/api/v1/stars', {
       method: 'POST',
       headers: headers,
