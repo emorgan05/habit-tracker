@@ -9,12 +9,12 @@ import HabitsListPres from '../components/HabitsListPres';
 class HabitsList extends Component {
 
   componentDidMount() {
-    this.props.fetchHabits();
+    setTimeout(this.props.fetchHabits(), 1000);
   }
 
   render() {
-    if(!this.props.habits) {
-      return (<h3>Loading...</h3>);
+    if(this.props.habits === {}) {
+      return (<p>You must be new. Add a habit</p>);
     }
 
     const habitListItems = this.props.habits.map((habit, index) => {
