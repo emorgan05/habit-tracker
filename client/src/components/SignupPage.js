@@ -26,7 +26,7 @@ class SignupPage extends Component {
     event.preventDefault();
     this.props.createNewUser(this.state.credentials);
     if (this.props.logged_in) {
-      this.props.history.push('/habits');
+      setTimeout(this.props.history.push('/habits'), 5000);
     }
   }
 
