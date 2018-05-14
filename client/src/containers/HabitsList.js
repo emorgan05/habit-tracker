@@ -9,7 +9,7 @@ import HabitsListPres from '../components/HabitsListPres';
 class HabitsList extends Component {
 
   componentDidMount() {
-    setTimeout(this.props.fetchHabits(), 1000);
+    setTimeout(this.props.fetchHabits(), 5000);
   }
 
   render() {
