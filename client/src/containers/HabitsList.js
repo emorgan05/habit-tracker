@@ -9,11 +9,11 @@ import HabitsListPres from '../components/HabitsListPres';
 class HabitsList extends Component {
 
   componentDidMount() {
-    setTimeout(this.props.fetchHabits(), 5000);
+    this.props.fetchHabits();
   }
 
   render() {
-    if(this.props.habits === {}) {
+    if(this.props.habits == {}) {
       return (<p>You must be new. Add a habit</p>);
     }
 
