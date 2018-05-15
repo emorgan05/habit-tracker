@@ -27,11 +27,9 @@ export function createNewUser(credentials) {
     return SessionApi.createUser(credentials)
       .then(response => {
         dispatch({ type: 'CREATE_USER', payload: response });
-        return loginUser(credentials)
       })
-      .then(response => {
-        sessionStorage.setItem('jwt', response.jwt);
-        dispatch(loginSuccess());
-      })
+      .catch(error => {
+        throw(error);
+      });
   };
 }
